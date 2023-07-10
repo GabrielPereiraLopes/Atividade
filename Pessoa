@@ -1,0 +1,81 @@
+
+package escola;
+
+import java.util.ArrayList;
+
+
+public class Pessoa {
+    private String nome;
+    private String CPF; 
+    private String email;
+    private ArrayList<Telefone> telefone;
+    private Endereco endereco;
+
+  
+    public String getNome() {
+        return nome;
+    }
+
+   
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+   
+    public String getCPF() {
+        return CPF;
+    }
+
+   
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    
+    public String getEmail() {
+        return email;
+    }
+
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
+    public ArrayList<Telefone> getTelefone() {
+        return telefone;
+    }
+
+
+    public void setTelefone(ArrayList<Telefone> telefone) {
+        this.telefone = telefone;
+    }
+
+   
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
+    public void imprimir(){
+        System.out.println("Nome: " +getNome());
+        System.out.println("CPF: " +getCPF());
+        System.out.println("Email: " +getEmail());
+        
+        getEndereco().imprimirEndereco();
+        
+        if(getTelefone() == null){
+           System.out.println("Nao existe telefone na lista!");
+        }else{
+            for(int i = 0; i < getTelefone().size();i++){
+                getTelefone().get(i).imprimirTelefone();
+                 }
+        }
+    }
+    
+}
+
